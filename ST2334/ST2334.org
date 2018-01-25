@@ -190,7 +190,7 @@ Sample data.
 **** a
 Discrete because set number of hours (assuming no decimals).
 **** b
-Continuos because any value between range is possible.
+Continuous because any value between range is possible.
 **** c
 Categorical. Only a few colours.
 **** d
