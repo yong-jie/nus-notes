@@ -123,6 +123,45 @@ The *pth percentile* is a value where p percent of values fall below that value.
 
 Percentiles are also known quantiles. The three most useful percentiles are the quartiles. First quartile has p = 25; second quartile is p = 50; and third quartile is where p = 75.
 
+**** Sample Variance (Standard Deviation)
+One good way to measure spread is to be:
+
+\begin{equation}
+d = \frac{1}{n} \sum\limits_{i=1}^n (x_i - \bar{x})
+\end{equation}
+
+The problem with this is that the sum of all deviations about the mean will always be zero. To mitigate this, square it.
+
+\begin{equation}
+s^2 = \frac{1}{n-1} \sum\limits_{i=1}^n (x_i - \bar{x})^2
+\end{equation}
+
+The *sample standard deviation*, s, is the positive square root of the sample variance. The computational formula for s^2 is an efficient way to compute it:
+
+\begin{equation}
+s ^2 = \frac{1}{n-1} \left[\sum\limits_{i=1}^n x_i^2 - \frac{(\sum\limits_{i=1}^n x_i)^2}{n} \right]
+\end{equation}
+\begin{equation}
+s^2 = \frac{1}{n-1} \left[\sum\limits_{i=1}^n x_i^2 - n \bar{x}^2 \right]
+\end{equation}
+
+Note that the *sample* variance is not really the variance of the sample. It is just a tool to estimate the *population* variance. It is the mean square distance to the population mean. But we don't usually have the population mean so we use the sample mean instead.
+
+**** IQR (Inter-quartile Range)
+Quartiles are also used to define a measure of spread that is more resistant to outliers compared to range and standard deviation.
+IQR is the difference between Q3 and Q1. It is not affected by any measurements below Q1 and above Q3
+
+**** Coefficient of Variation
+
+This is a relative measure of variation. It is express as a percentage and is hence useable across differences in precision. For example, using kilograms in a cooking recipe is meaningless. The equation is:
+
+\begin{equation}
+CV = 100\% \times \frac{s}{|\bar{x}|}
+\end{equation}
+**** Boxplots
+Also know as a box-and-whisker diagram, it depicts groups of numerical data through their five-number summaries: minimum, maximum, Q1, Q2 (median), and Q3. Note that the min and max exclude outliers, which are data points that are either lower than 1.5 x IQR below Q1, or higher than 1.5 x IQR above Q3.
+
+Boxplots are usually plotted together with stem-and-leaf or histograms. Boxplots offer a balance of simplicity and information. They are often plotted side-by-side for groups or categories we wish to compare.
 * Tutorials
 ** Tutorial 1
 *** 1
