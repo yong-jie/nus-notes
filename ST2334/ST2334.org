@@ -82,13 +82,13 @@ Pie charts are a very bad way of reperenting information. The eye is much better
 - These are especially useful when you make them by hand for batches of fewer than a few hundred values.
 - Quick way to display and even record numbers.
 
-5|6
-6|0444
-6|8888
-7|2222
-7|6666
-8|000044
-8|8
+5|6\\
+6|0444\\
+6|8888\\
+7|2222\\
+7|6666\\
+8|000044\\
+8|8\\
 
 Stem-and-leaf plots help to find even more data from numerical aspects rather than the shape. Notice that these are all even numbers. Perhaps it could be because heartbeats are taken for 15 seconds and multiplied by 4, rather than recorded for the whole duration of 60 seconds?
 **** Dotplots
