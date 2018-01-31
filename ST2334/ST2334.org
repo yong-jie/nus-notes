@@ -198,7 +198,7 @@ Categorical. Yes or No.
 **** e
 Categorical-ordinal.
 *** 4
-No. Convenience sampling. May introduce biases like selecting only people who pass by Platypus Food Bar at S16.
+No. Convenience sampling. May introduce biases like selecting only people who pass by Platypus Food Bar at S16. (By right answer is "self-selected sampling". This is when investigators just leave the form there for everyone to participate if they want. The problem with this is that those who tend to participate tend to have strong opinions.)
 *** 5
 **** a
 Randomized experiment.
@@ -214,11 +214,10 @@ Yes. Affects both parties. Number of modules affects amount of sleep and grades.
 **** b
 Not confounder. Weight doesnt affect grades nor sleep directly.
 **** c
-@TODO: Not confounder. Partying affects sleep, but not necessarily grades.
+Not confounder. Partying affects sleep, but not necessarily grades.
+Ans: Spend energy partying might have less energy studying.
 *** 7
 **** a
-Convenience sampling.
+Convenience sampling. (Ans: Not convenience because for convenience sampling, convenience is for the respondents not the investigator. Self-select or volunteer sampling.)
 **** b
 No. Biased towards people who have strong opinion who are willing to take the time to respond to the poll.
-
-
