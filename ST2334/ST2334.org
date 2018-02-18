@@ -153,7 +153,7 @@ IQR is the difference between Q3 and Q1. It is not affected by any measurements 
 
 **** Coefficient of Variation
 
-This is a relative measure of variation. It is express as a percentage and is hence useable across differences in precision. For example, using kilograms in a cooking recipe is meaningless. The equation is:
+This is a relative measure of variation. It is expressed as a percentage and is hence useable across differences in precision. For example, using kilograms in a cooking recipe is meaningless. The equation is:
 
 \begin{equation}
 CV = 100\% \times \frac{s}{|\bar{x}|}
@@ -162,6 +162,86 @@ CV = 100\% \times \frac{s}{|\bar{x}|}
 Also know as a box-and-whisker diagram, it depicts groups of numerical data through their five-number summaries: minimum, maximum, Q1, Q2 (median), and Q3. Note that the min and max exclude outliers, which are data points that are either lower than 1.5 x IQR below Q1, or higher than 1.5 x IQR above Q3.
 
 Boxplots are usually plotted together with stem-and-leaf or histograms. Boxplots offer a balance of simplicity and information. They are often plotted side-by-side for groups or categories we wish to compare.
+* Probability
+** Basic Terminology
+*** Sample Space
+The set of all possible outcomes of an experiment. For example, the sample space of tossing a coin is S = {H,T}. The lifetime of a transistor S = [0, infinity).
+*** Event
+Any subset of the sample space is an event.
+** Algebra of Events
+*** Union
+For two events E and F of a sample space S, we defined the union of E and F to be a set consisting of all point that are either in E or F, or both.
+*** Intersect
+We define EF (or E n F) to be the intersection of  E and F, which consists of all outcomes that are in *both* E and F. Should there be no intersection, then it will be equal to null. If E n F = Ø, then E and F are said to be mutually exclusive.
+*** More than 2 Events
+\begin{equation}
+\bigcup\limits_{1}^\infty E_{n}
+\end{equation}
+
+and
+\begin{equation}
+\bigcap\limits_{1}^\infty E_{n}
+\end{equation}
+*** Complement
+Shown as
+\begin{equation}
+E^c
+\end{equation}
+E^c will only occur when E does not happen. S^c = Ø.
+*** Subset
+\begin{equation}
+E \subset F
+\end{equation}
+
+if E is subset of F, and F is subset of E, then E = F.
+*** Common Laws
+\begin{equation}
+\text{Commutative laws: } E \cup F = F \cup E \\
+E \cap F = F \cap E \\
+\text{Associative laws: } (E \cup F) \cup G = E \cup (F \cup G) \\
+(E \cap F) \cap G = E \cup (F \cap G) \\
+\text{Distributive laws: } (E \cup F)G = (E \cap G) \cup (F \cap G) \\
+(E \cap F) \cup G = (E \cup G) \cap (F \cup G)
+\end{equation}
+One easy way to remember: think of intersection as multiplication and union as addition.
+** Counting Methods
+*** The Generalized Principle of Counting
+Assuming for each experiment i, there are n_{i} possible outcomes. Then for all r experiments, the total number of possible outcomes is the multiplication of all n_{i}.
+*** Factorial
+With n items, there are n! ways of arranging them, because n x (n-1) x (n-2) etc.
+*** Permutations
+When the order matters, use nPr.
+\begin{equation}
+P_{r}^n = \frac{n!}{(n-r)!}
+\end{equation}
+Example: How many ways to have 2 students (order matters) out of 4? use 4P2.
+*** Combinations
+When order doesn't matter, use choose. nCr.
+\begin{equation}
+C_{r}^n = \frac{n!}{r!(n-r)!}
+\end{equation}
+Example: How many pairs (order doesn't matter) can you get out of 4 students? Answer is 4C2.
+** Interpretations of Probability
+*** Equally-likely outcomes
+If there are m equally-likely possibilities and s of them are regarded as successful, then the probability of success is s/m.
+*** Frequency Analysis
+Use the proportion of events that has occured compared to all events over a long period of time with repeated experiments.
+*** Personal Probability
+Subjective method of determining probability using a person's assessment of the chances of succes. For example, a man estimates a 95% chance that his girlfriend will accept his marriage proposal.
+** Axioms of Probability
+1) For any event A, 0 <= P(A) <= 1.
+2) Let S be the sample space, then P(S) = 1.
+3) For any two *mutually exclusive* events A and B, P(A \cup B) = P(A) + P(B)
+
+With these 3 axioms, some propositions can be derived.
+1) P(Ø) = 0
+2) For any finite sequence of mutually *exclusive events*, P(A_{1} \cup A_{2} \cup A_{3 ...}) = P(A_{1}) + P(A_{2}) + P(A_{3}) ...
+3) P(A^c) = 1 - P(A)
+4) if A ⊆ B, then P(A) + P(B \cap A^c) = P(B). Hence, P(A) ≤ P(B).
+5) Let A and B be any two events, then P(A \cup B) = P(A) + P(B) - P(A \cap B).
+
+** Computing Probability
+
 * Tutorials
 ** Tutorial 1
 *** 1
