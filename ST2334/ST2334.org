@@ -301,6 +301,155 @@ P(A) = P(B_{1})P(A|B_{1}) + ... + P(B_{n})P(A|B_{n}) \\
 P(B_{k}|A) = \frac{P(B_{k})P(A|B_{k})}{P(B_{1})P(A|B_{1}) + ... + P(B_{n})P(A|B_{n})}
 \end{equation}
 
+* Discrete Random Variables
+** Definitions
+A random variable X is a mapping from the sample space to real numbers.
+| Outcome            | (T,T) | (T,H) | (H,T) | (H,H) |
+| Random Variable, X |     0 | 1     | 1     | 2     |
+
+Example: We toss 3 fair coins. Y denotes number of heads appearing. 
+
+$P(Y = 0) = P(T,T,T) = \frac{1}{8}$.
+** Notations
+We use capital letters for random variables. (X, Y, etc).
+
+We use  lower-cased letters for values of random variables. Eg {X = x} means that the random variable X takes on the value X.
+
+Technically, we are referring to the event C where C = {s \in S: X(s) = x}.
+
+Example: Consider a single coin toss. S = {H, T}. If the coin is fair, then P(H) = P(T) = 0.5
+
+Define a random variable X(H) = 1, X(T) = 0. Then we have {X = 1} = {H}, and {X = 0} = {T}.
+
+And so P(X = 1) = P({H}) = 0.5, P(X = 0) = P({T}) = 0.5
+
+The probability mass function of X is f, where f(0) = f(1) = 0.5
+
+** Probability Mass function
+The probability mass function (pmf) of a discrete random variable X is given by:
+
+\begin{equation}
+f(x_{i}) = p(x_{i}) = p_{i} = P({X = x_{i}})
+\end{equation}
+
+*** Properties of a Probability Mass function
+1) $f(x_{i}) \ge 0$ for every x_{i}.
+2) $\sum_{x_{i}} f(x_{i}) = 1$.
+3) $P(X \in E) = \sum_{x_{i} \in E} f(x_{i})$.
+
+** Expected Values
+The expected value is the mean value that we will get. It is defined by:
+
+\begin{equation}
+E(X) = \sum\limits_{x_{i}} x_{i} P(X = x_{i})
+\end{equation}
+
+We often denote this as µ. That is, µ = E(X).
+
+*** Properties of Expectation
+1) if a and b are constants then E(a + bX) = a + bE(X)
+2) For any random variables X and Y, E(X + Y) = E(X) + E(Y)
+3) For any function f(x), $E(f(X)) = \sum\limits_{x_{i}} f(x_{i})P(X = x_{i})$.
+
+In particular, when f(x) = x^2,
+\begin{equation}
+E(X^2) = \sum\limits_{x_{i}} x_{i}^2 P(X = x_{i})
+\end{equation}
+
+** Variance
+The variance of a random variable X is the number:
+
+\begin{equation}
+Var(X) = E[(X-E(X))^2] \\
+= \sum\limits_{x_{i}}(x_{i} - µ)^2 P(X = x_{i})
+\end{equation}
+
+The standard deviation is the positive square root of the variance.
+
+*** Properties of Variance
+1) Var(X) ≥ 0
+2) If Var(X) = 0, then P(X = E(X)) = 1
+3) If a and b are constants, Var(a + bX) = b^2 Var(X)
+4) Var(X) = E(X^2) - (E(X))^2
+
+** Bernoulli Random Variables
+*** The Bernoulli Trial
+A Bernoulli Trial is an experiment where there are only two outcomes, one of which is success and another is failure.
+
+A Bernoulli process consists of repeatedly performing independent and identical Bernoulli Trials.
+
+*** Bernoulli Random Variable
+Let p denote the probability of success. The Bernoulli Random Variable has probability mass function given by:
+
+P(X = 1) = p, P(X = 0) = 1 - p.
+
+E(X) = p, and Var(X) = p(1 - p).
+
+** Binomial Random Variable
+A binomial random variable counts the number of successes in n trials in a Bernoulli Process. Suppose we have n trials where:
+
+1) the probability of success for each trial is the same p
+2) the trials are independent
+
+then we say X has a binomial distribution and write it as X~B(n,p).
+
+The probability of getting x successes is given as:
+
+\begin{equation}
+P(X = x) = \binom{n}{x}p^x (1 - p)^{n-x}
+\end{equation}
+
+It can be shown that E(X) = np, and Var(X) np(1 - p).
+
+** Geometric Random Variable
+The geometric random variable is the number of Bernoulli trials needed to get the first success.
+
+We write X ~ Geom(p) when the trials have a probability of success p. Then,
+
+\begin{equation}
+P(X = k) = (1 - p)^{k - 1}p
+\end{equation}
+
+It can be shown that $P(X) = \frac{1}{p}$ and $Var(X) = \frac{1 - p}{p^2}$.
+
+** Poisson Random Variables
+The Poisson Random Variable is a discrete probability distribution that expresses the probability of the number of events ocurring in a fixed period of time (or fixed region).
+
+X is a Poisson random variable with parameter λ, denoted by X ~ Poisson(λ), where λ > 0 is the expected number of occurences during the period/region, when its probability mass function is given by:
+
+\begin{equation}
+P(X = k) = \frac{e^{-λ}λ^k}{k!}
+\end{equation}
+
+It can be shown that E(X) = λ and Var(X) = λ.
+
+** Poisson Approximation of Binomial Distribution
+if X ~ B(n, p) with n is very large and p is very small, then the distribution may be approximated by the Poisson distribution X ~ Poisson(np).
+
+Morp precisely, X_{n} ~ B(n, λ/n), Y ~ Poisson(λ).
+
+Then for all 0 ≤ k ≤ n:
+
+\begin{equation}
+\lim_{n\to\infty} P(X_{n} = k) = P(Y = k)
+\end{equation}
+
+The approximation is good when n ≥ 20 and p ≤ 0.05, or if n ≥ 100 and np ≤ 10.
+
+** Poisson Process
+The poisson process is a continuous time process. We count the number of occurences within some interval of time. The defining properties of a Poisson Process with rate parameter α are:
+
+- the expected number of occurences in an interval of Length T is αT
+- there are no simultaneous occurences
+- the number of occurences in disjoint time intervals are independent
+
+The number of occurences in any interval of a Poisson Process has a Poisson distribution.
+
+** Cumulative Distribution Function
+The cumulative distribution function (cdf) for a random variable is F(x) = P(x ≤ x). 
+
+Because the cdf function extends naturally to other types of random variables, it is also known simply as the *distribution function*.
+
 * Tutorials
 ** Tutorial 1
 *** 1
